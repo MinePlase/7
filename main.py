@@ -1,5 +1,4 @@
 score = 0
-score_ochki = 0
 true_answers =[2, 3, 4, 2, 1, 2, 1, 3, 1, 1]
 questions = ["""Вот твой первый вопрос:
 Кто был первым президентом Российской Федерации?
@@ -67,15 +66,15 @@ print(name, """,Начнём игру!
     *После 3 вопроса твой несгораемый выигрыш составит 300000.
     *После 7 вопроса он увеличится до 700000.
     *Если же ты ответишь на все вопросы правильно, ты получишь 1000000!!! Желаю удачи!""")
-for i in questions:
-    print(i)
+for item in questions:
+    print(item)
     answer = int(input("Введите ответ:"))
     your_answers.append(answer)
-for i in range(10):
-    if true_answers[i] == your_answers[i]:
-        score = i + 1
+for item in range(10):
+    if true_answers[item] == your_answers[item]:
+        score += 1
     else:
-        print(f"ты ответил неверно на {i + 1} вопрос")
+        print(f"ты ответил неверно на {item + 1} вопрос")
         if score >= 3:
             print("Ты дошел до несгораемой суммы в 300.000 единиц")
         elif 7 <= score <= 9:
